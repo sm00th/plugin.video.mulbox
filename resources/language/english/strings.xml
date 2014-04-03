@@ -2,4 +2,7 @@
 <strings>
     <string id="30100">User Hash</string>
     <string id="30101">Protocol</string>
+    <string id="30200">Error</string>
+    <string id="30201">Error downloading playlist</string>
+    <string id="30202">Error loading playlist</string>
 </strings>
