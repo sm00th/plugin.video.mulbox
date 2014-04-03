@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.mulbox" version="0.1.0" name="mulbox" provider-name="mulbox">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Plays live streams from ustvnow.tk</summary>
+        <description>Live streaming US TV. You MUST provide your hash to view streams (see addon settings).</description>
+        <platform>all</platform>
+    </extension>
+</addon>
+
