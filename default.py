@@ -8,8 +8,12 @@ pluginQuery = sys.argv[2]
 __settings__ = xbmcaddon.Addon(id='plugin.video.mulbox')
 __language__ = __settings__.getLocalizedString
 
-uhash = __settings__.getSetting('uhash')
-proto = int(__settings__.getSetting('proto')) + 1
+try:
+  uhash = __settings__.getSetting('uhash')
+  proto = int(__settings__.getSetting('proto')) + 1
+except(ValueError):
+  proto = 1
+
 if proto == 2:
   proto = 3
 
