@@ -22,7 +22,7 @@ PLAYLIST_URL = BASE_URL + '/' + uhash + '/playlist' + str(proto) + '.m3u'
 XBMC_PLAYLIST = xbmc.translatePath("special://temp/mulbox.m3u")
 
 print "playlist url: %s" % PLAYLIST_URL
-print "ondisk path: %s" % XBMC_URL
+print "ondisk path: %s" % XBMC_PLAYLIST
 
 pldata = urllib2.urlopen(PLAYLIST_URL)
 pfile = open(XBMC_PLAYLIST, 'w')
@@ -32,8 +32,6 @@ pfile.close()
 
 pl = xbmc.PlayList(1)
 ret = pl.load(XBMC_PLAYLIST)
-
-os.unlink(XBMC_PLAYLIST)
 
 for i in range(pl.size()):
   print "[%d]: %s: %s" % (i, pl[i].getdescription(), pl[i].getfilename())
