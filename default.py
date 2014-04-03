@@ -15,19 +15,18 @@ if proto == 2:
 
 BASE_URL = 'http://www.mulbox.tk'
 PLAYLIST_URL = BASE_URL + '/' + uhash + '/playlist' + str(proto) + '.m3u'
-XBMC_PLAYLIST_URL = "special://temp/mulbox.m3u"
+XBMC_PLAYLIST = xbmc.translatePath("special://temp/mulbox.m3u")
 
-print PLAYLIST_URL
 pldata = urllib2.urlopen(PLAYLIST_URL)
-pfile = open(xbmc.translatePath(XBMC_PLAYLIST_URL), 'w')
+pfile = open(XBMC_PLAYLIST, 'w')
 pfile.write(pldata.read())
 pldata.close()
 pfile.close()
 
 pl = xbmc.PlayList(1)
-pl.load(XBMC_PLAYLIST_URL)
+ret = pl.load(XBMC_PLAYLIST)
 
-os.unlink(xbmc.translatePath(XBMC_PLAYLIST_URL))
+os.unlink(XBMC_PLAYLIST)
 
 for i in range(pl.size()):
   xbmcplugin.addDirectoryItem(pluginHandle, pl[i].getfilename(), pl[i], isFolder=False)
