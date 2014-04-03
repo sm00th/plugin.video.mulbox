@@ -1,2 +1,7 @@
+[B]Version 0.1.1[/B]
+- More robust playlist loading
+- Default user hash changed to 'testme'
+- Default protocol setting is now set
+
 [B]Version 0.1.0[/B]
 - Initial version
